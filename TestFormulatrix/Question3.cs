@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TestFormulatrix
 {
@@ -37,6 +35,31 @@ namespace TestFormulatrix
             else
                 counter = right;
             return counter;
+        }
+
+        public static int CalculateMaxDepthNoRecursive(Node n)
+        {
+            int count = 0;
+
+            Stack<Node> nodes = new Stack<Node>();
+            Node node;
+
+            nodes.Push(n);
+
+            while (nodes.Count > 0)
+            {
+                node = nodes.Pop();
+                count++;
+
+                if (node.left != null)
+                    nodes.Push(node.left);
+
+                if (node.right != null)
+                    nodes.Push(node.right);
+            }
+            count--;
+
+            return count;
         }
     }
 }

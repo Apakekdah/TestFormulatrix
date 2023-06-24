@@ -69,6 +69,10 @@ namespace TestFormulatrix
             var q3_1 = Question3.calculateMaxDepth(node);
             Console.WriteLine("Question3: Using Recursive " + q3_1.ToString());
 
+
+            var q3_2 = Question3.CalculateMaxDepthNoRecursive(node);
+            Console.WriteLine("Question3: Using Non Recursive " + q3_2.ToString());
+
             Console.WriteLine();
             Console.WriteLine();
 
@@ -141,7 +145,7 @@ namespace TestFormulatrix
                 formulatrixMax = 100;
             Console.WriteLine($"Question5: Calculate Formulatrix/Prime Number between {formulatrixMin} - {formulatrixMax}");
             Console.Write($"Question5: Number is ");
-            for(num = formulatrixMin; num <= formulatrixMax; num++)
+            for (num = formulatrixMin; num <= formulatrixMax; num++)
             {
                 if (Question5.IsPrime(num))
                     Console.Write($"{num} ");
@@ -150,7 +154,7 @@ namespace TestFormulatrix
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press enter to exit !");
-            
+
             Console.ReadLine();
         }
     }
